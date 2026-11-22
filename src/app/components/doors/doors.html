@@ -1,0 +1,54 @@
+<section id="expertise" class="section doors-sec">
+  <div class="container">
+    <div class="topline mono">
+      <span>What I do</span>
+      <span class="hide-sm">Backend · Cloud · Quality · Data</span>
+      <span>Hover a door →</span>
+    </div>
+
+    <h2 class="section-title title" appReveal>Magic happens behind the doors</h2>
+
+    <div class="doors">
+      @for (d of doors; track d.plate; let i = $index) {
+        <div
+          class="door-wrap"
+          [class.open]="open() === i"
+          [appReveal]="i * 90"
+          (pointerenter)="onEnter($event, i)"
+          (pointerleave)="onLeave($event)"
+        >
+          <div class="frame">
+            <div class="room" [attr.aria-hidden]="open() !== i">
+              <h3>{{ d.title }}</h3>
+              <p class="mono tag">{{ d.tagline }}</p>
+              <ul>
+                @for (pt of d.points; track pt) {
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7" /></svg>
+                    {{ pt }}
+                  </li>
+                }
+              </ul>
+            </div>
+
+            <button
+              type="button"
+              class="door"
+              [style.--door]="d.color"
+              [attr.aria-expanded]="open() === i"
+              [attr.aria-label]="'Open the ' + d.title + ' door'"
+              (pointerdown)="onDown($event)"
+              (click)="onClick($event, i)"
+            >
+              <span class="panel top" aria-hidden="true"></span>
+              <span class="panel bottom" aria-hidden="true"></span>
+              <span class="plate mono">{{ d.plate }}</span>
+              <span class="handle" aria-hidden="true"></span>
+            </button>
+          </div>
+          <p class="caption">{{ d.title }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

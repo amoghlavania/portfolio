@@ -1,0 +1,148 @@
+:host {
+  --len: clamp(150px, 34vh, 320px);
+  position: fixed;
+  top: 0;
+  right: clamp(18px, 3.2vw, 44px);
+  z-index: 60;
+  pointer-events: none;
+}
+
+.thread {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% 0;
+  animation: sway 6s ease-in-out infinite;
+
+  &.drag,
+  &.tug,
+  &.spring {
+    animation: none;
+  }
+
+  &.spring {
+    animation: wobble 0.9s ease-out;
+  }
+}
+
+.cord {
+  display: block;
+  width: 2px;
+  height: calc(var(--len) + var(--pull, 0px));
+  background: linear-gradient(to bottom, transparent, var(--cord) 18%, var(--cord));
+  border-radius: 2px;
+}
+
+.knob {
+  pointer-events: auto;
+  position: relative;
+  margin-top: -2px;
+  width: 44px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &:hover .hint,
+  &:focus-visible .hint {
+    opacity: 1;
+    transform: translate(-100%, -50%);
+  }
+}
+
+/* Brass pendant at the end of the cord */
+.bead {
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 28px;
+  border-radius: 50% 50% 46% 46% / 34% 34% 66% 66%;
+  background:
+    radial-gradient(circle at 35% 30%, #fff3c9 0 8%, transparent 30%),
+    linear-gradient(160deg, #f0cf86, #c99a3f 55%, #8a6420);
+  box-shadow:
+    0 6px 14px -4px rgba(0, 0, 0, 0.45),
+    inset -2px -3px 4px rgba(0, 0, 0, 0.25);
+
+  &::before {
+    // little cap where the cord ties in
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    background: #8a6420;
+  }
+}
+
+.hint {
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  transform: translate(calc(-100% + 8px), -50%);
+  opacity: 0;
+  white-space: nowrap;
+  font-size: 10px;
+  color: var(--muted);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  pointer-events: none;
+}
+
+/* Phase-specific motion */
+.tug .cord {
+  transition: height 0.2s cubic-bezier(0.5, 0, 0.9, 0.6);
+}
+
+.spring .cord {
+  transition: height 0.7s cubic-bezier(0.25, 1.9, 0.45, 0.85);
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(0.6deg);
+  }
+  50% {
+    transform: rotate(-0.6deg);
+  }
+}
+
+@keyframes wobble {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@media (max-width: 900px) {
+  :host {
+    --len: 96px;
+    right: 64px;
+  }
+}

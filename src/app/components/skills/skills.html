@@ -1,0 +1,44 @@
+<section id="skills" class="section skills">
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      @for (round of [0, 1]; track round) {
+        @for (s of marquee; track s) {
+          <span>{{ s }}</span><i>✦</i>
+        }
+      }
+    </div>
+  </div>
+
+  <div class="container">
+    <p class="eyebrow" appReveal>Toolbox</p>
+    <h2 class="section-title head" appReveal="80">The stack I reach for.</h2>
+
+    <div class="groups">
+      @for (g of groups; track g.title; let i = $index) {
+        <div class="group" [appReveal]="i * 70">
+          <p class="mono num">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</p>
+          <h3>{{ g.title }}</h3>
+          <div class="chips">
+            @for (s of g.items; track s) {
+              <span class="chip">{{ s }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="certs">
+      @for (c of certs; track c.name; let i = $index) {
+        <div class="cert" [appReveal]="i * 90">
+          <span class="badge" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6" /><path d="M8.5 14 7 22l5-3 5 3-1.5-8" /></svg>
+          </span>
+          <div>
+            <p class="mono">Certification · {{ c.validity }}</p>
+            <h4>{{ c.name }}</h4>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

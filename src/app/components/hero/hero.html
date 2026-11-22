@@ -1,0 +1,78 @@
+<section id="home" class="hero">
+  <div class="glow" aria-hidden="true"></div>
+
+  <div class="container grid">
+    <div class="copy">
+      <p class="eyebrow rise" style="--i: 0">{{ profile.role }} · {{ profile.company }}</p>
+
+      <h1 class="rise" style="--i: 1">
+        <span class="hi">Hi, I'm {{ profile.firstName }}.</span>
+        <span class="iam">I am a</span>
+      </h1>
+
+      <div class="flip rise" style="--i: 2">
+        <div class="rings" aria-hidden="true">
+          @for (r of rings; track $index) {
+            <i></i>
+          }
+        </div>
+        <div class="pad">
+          <span class="sheet s2" aria-hidden="true"></span>
+          <span class="sheet s1" aria-hidden="true"></span>
+          <div class="page" aria-live="polite">
+            <span>{{ roles[current()] }}</span>
+          </div>
+          @if (flipping()) {
+            <div class="page turning" aria-hidden="true" (animationend)="flipping.set(false)">
+              <span>{{ roles[prev()] }}</span>
+            </div>
+          }
+          <small class="count mono">{{ pad(current() + 1) }} / {{ pad(roles.length) }}</small>
+        </div>
+      </div>
+
+      <p class="lede rise" style="--i: 3">{{ profile.summary }}</p>
+
+      <div class="cta rise" style="--i: 4">
+        <a class="btn primary" href="#contact">
+          Hire me
+          <span class="arrow" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </span>
+        </a>
+        <a class="btn ghost" href="#project">See my work</a>
+      </div>
+    </div>
+
+    <div class="visual rise" style="--i: 2">
+      <div class="card" [class.flipped]="showAbility()">
+        <div class="face front" [attr.aria-hidden]="showAbility()">
+          <img [src]="profile.avatar" [alt]="'Illustrated avatar of ' + profile.fullName" width="336" height="600" />
+        </div>
+        <div class="face back" [attr.aria-hidden]="!showAbility()">
+          <p class="mono label">Ability card</p>
+          <h3>{{ profile.fullName }}</h3>
+          <p class="role">{{ profile.role }}</p>
+          <ul class="stats">
+            @for (s of stats; track s.label) {
+              <li>
+                <strong>{{ s.value }}</strong>
+                <span>{{ s.label }}</span>
+              </li>
+            }
+          </ul>
+          <p class="mono core">Java · Spring Boot · Microservices · AWS</p>
+        </div>
+      </div>
+      <button type="button" class="ability" [attr.aria-pressed]="showAbility()" (click)="showAbility.update((v) => !v)">
+        {{ showAbility() ? 'Back to me' : 'My ability card' }}
+      </button>
+    </div>
+  </div>
+
+  <div class="container strip mono">
+    <span class="live"><i aria-hidden="true"></i>Available for work</span>
+    <span class="mid">{{ profile.location }} · India</span>
+    <a href="#expertise">Scroll to explore ↓</a>
+  </div>
+</section>

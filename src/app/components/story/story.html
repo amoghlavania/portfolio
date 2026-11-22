@@ -1,0 +1,43 @@
+<section id="story" class="section story">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="container grid">
+    <div class="sticky">
+      <p class="eyebrow">My story</p>
+      <h2 class="section-title">Let's go back in time.</h2>
+
+      <div class="year" aria-hidden="true">
+        @for (y of [current().year]; track y) {
+          <span>{{ y }}</span>
+        }
+      </div>
+
+      <div class="range mono" aria-hidden="true">
+        @for (r of [current().range]; track r) {
+          <span>{{ r }}</span>
+        }
+      </div>
+
+      <div class="meter mono">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" stroke-linecap="round" /></svg>
+        <span>{{ pad(active() + 1) }} / {{ pad(items.length) }}</span>
+        <span class="bar"><i [style.width.%]="progress()"></i></span>
+      </div>
+    </div>
+
+    <ol class="timeline">
+      @for (it of items; track it.title; let i = $index) {
+        <li #entry class="entry" [attr.data-index]="i" [class.active]="active() === i" [class.past]="active() > i">
+          <span class="node" aria-hidden="true"></span>
+          <p class="mono when">{{ it.range }}</p>
+          <h3>{{ it.title }}</h3>
+          <p class="org">{{ it.org }}</p>
+          <ul>
+            @for (pt of it.points; track pt) {
+              <li>{{ pt }}</li>
+            }
+          </ul>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

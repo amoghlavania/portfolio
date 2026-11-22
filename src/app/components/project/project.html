@@ -1,0 +1,43 @@
+<section id="project" class="section">
+  <div class="container">
+    <p class="eyebrow" appReveal>Key project · Coforge</p>
+    <h2 class="section-title head" appReveal="80">From mainframe to microservices, <span>one request at a time.</span></h2>
+
+    <div class="migration" appReveal="120" aria-label="Migration from legacy mainframe to Java microservices">
+      <div class="node old">
+        <span class="mono">Legacy</span>
+        <strong>Mainframe</strong>
+      </div>
+      <div class="pipe" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="node new">
+        <span class="mono">Migrated</span>
+        <strong>Java Microservices</strong>
+      </div>
+    </div>
+
+    <article class="card" appReveal="160">
+      <div class="body">
+        <h3>{{ project.name }}</h3>
+        <div class="stack">
+          @for (t of project.stack; track t) {
+            <span class="chip">{{ t }}</span>
+          }
+        </div>
+        <ul class="points">
+          @for (pt of project.points; track pt) {
+            <li>{{ pt }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="stats">
+        @for (s of project.stats; track s.value) {
+          <div class="stat">
+            <strong>{{ s.value }}</strong>
+            <span>{{ s.label }}</span>
+          </div>
+        }
+      </div>
+    </article>
+  </div>
+</section>

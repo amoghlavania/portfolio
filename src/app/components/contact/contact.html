@@ -1,0 +1,37 @@
+<section id="contact" class="section contact">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow" appReveal>Contact</p>
+    <h2 class="big" appReveal="80">Let's build something <span>reliable.</span></h2>
+
+    <div class="mail" appReveal="140">
+      <a [href]="'mailto:' + p.email">{{ p.email }}</a>
+      <button type="button" class="copy" (click)="copyEmail()" [attr.aria-label]="'Copy email address'">
+        {{ copied() ? 'Copied ✓' : 'Copy' }}
+      </button>
+    </div>
+
+    <div class="cards">
+      <a class="c" [href]="p.linkedin" target="_blank" rel="noopener" appReveal="0">
+        <span class="mono">LinkedIn</span>
+        <strong>{{ p.linkedinLabel }}</strong>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+      <a class="c" [href]="'tel:' + p.phone.replace(' ', '')" appReveal="80">
+        <span class="mono">Phone</span>
+        <strong>{{ p.phone }}</strong>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+      <div class="c" appReveal="160">
+        <span class="mono">Based in</span>
+        <strong>{{ p.location }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container foot mono">
+    <span>© {{ year }} {{ p.fullName }}</span>
+    <span class="hide-sm">Built with Angular</span>
+    <span>Pull the thread to switch the lights</span>
+  </footer>
+</section>

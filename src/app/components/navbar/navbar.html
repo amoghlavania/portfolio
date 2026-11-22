@@ -1,0 +1,28 @@
+<header class="nav" [class.scrolled]="scrolled()" [class.open]="menuOpen()">
+  <div class="inner">
+    <a class="brand" href="#home">{{ firstName }}<span>.</span></a>
+
+    <nav class="links" aria-label="Primary">
+      @for (l of links; track l.id) {
+        <a [href]="'#' + l.id" [class.active]="active() === l.id" (click)="menuOpen.set(false)">{{ l.label }}</a>
+      }
+    </nav>
+
+    <div class="clock" aria-label="Local time in India">
+      <span class="lbl">Local time</span>
+      <strong>{{ time() }}</strong>
+      <span class="dot" aria-hidden="true"></span>
+      <span>{{ date() }}</span>
+    </div>
+
+    <button
+      type="button"
+      class="burger"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle menu"
+      (click)="menuOpen.update((v) => !v)"
+    >
+      <span></span><span></span>
+    </button>
+  </div>
+</header>

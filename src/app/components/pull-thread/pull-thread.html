@@ -1,0 +1,18 @@
+<div class="thread" [class]="phase()" [style.--pull.px]="pull()">
+  <span class="cord" aria-hidden="true"></span>
+  <button
+    #knob
+    type="button"
+    class="knob"
+    [attr.aria-label]="isDark() ? 'Pull to switch to light mode' : 'Pull to switch to dark mode'"
+    [attr.aria-pressed]="isDark()"
+    (pointerdown)="onPointerDown($event)"
+    (pointermove)="onPointerMove($event)"
+    (pointerup)="onPointerUp()"
+    (pointercancel)="onPointerUp()"
+    (click)="onClick($event)"
+  >
+    <span class="bead" aria-hidden="true"></span>
+    <span class="hint mono" aria-hidden="true">{{ isDark() ? 'Lights on' : 'Lights off' }}</span>
+  </button>
+</div>
