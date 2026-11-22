@@ -14,7 +14,7 @@ Personal portfolio built with **Angular** (standalone components, signals, zonel
 ## Editing content
 
 All copy lives in [`src/app/data/portfolio.data.ts`](src/app/data/portfolio.data.ts).
-To replace the avatar, overwrite `public/images/avatar.jpg` (portrait image works best).
+To replace the photo, overwrite `public/images/amogh.jpg` (4:5 portrait works best).
 
 ## Development
 

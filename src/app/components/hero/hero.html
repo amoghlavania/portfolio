@@ -47,7 +47,7 @@
     <div class="visual rise" style="--i: 2">
       <div class="card" [class.flipped]="showAbility()">
         <div class="face front" [attr.aria-hidden]="showAbility()">
-          <img [src]="profile.avatar" [alt]="'Illustrated avatar of ' + profile.fullName" width="336" height="600" />
+          <img [src]="profile.avatar" [alt]="'Photo of ' + profile.fullName" width="960" height="1200" fetchpriority="high" />
         </div>
         <div class="face back" [attr.aria-hidden]="!showAbility()">
           <p class="mono label">Ability card</p>

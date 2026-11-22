@@ -15,7 +15,7 @@ export const PROFILE = {
   summary:
     'Java Backend Developer at Coforge with 2+ years of experience in Core Java, Spring Boot, Microservices and REST APIs. ' +
     'I helped migrate an airline reservation system from mainframe to Java, improving scalability and ensuring IATA compliance.',
-  avatar: 'images/avatar.jpg',
+  avatar: 'images/amogh.jpg',
 };
 
 export const NAV_LINKS = [
