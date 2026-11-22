@@ -1,27 +1,128 @@
+/* ---------- Animatable colour tokens ----------
+   Registering them lets the light palettes cross-fade smoothly. */
+@property --bg { syntax: '<color>'; inherits: true; initial-value: #f3f4f8; }
+@property --bg-2 { syntax: '<color>'; inherits: true; initial-value: #eceef4; }
+@property --surface { syntax: '<color>'; inherits: true; initial-value: #fafbfd; }
+@property --text { syntax: '<color>'; inherits: true; initial-value: #16181d; }
+@property --muted { syntax: '<color>'; inherits: true; initial-value: #5f6472; }
+@property --faint { syntax: '<color>'; inherits: true; initial-value: #a3a8b5; }
+@property --accent { syntax: '<color>'; inherits: true; initial-value: #4f46e5; }
+@property --iam { syntax: '<color>'; inherits: true; initial-value: #4f46e5; }
+@property --cta-bg { syntax: '<color>'; inherits: true; initial-value: #2353d6; }
+@property --cord { syntax: '<color>'; inherits: true; initial-value: #2b2d33; }
+@property --header-bg { syntax: '<color>'; inherits: true; initial-value: transparent; }
+@property --cursor-a { syntax: '<color>'; inherits: true; initial-value: transparent; }
+@property --cursor-b { syntax: '<color>'; inherits: true; initial-value: transparent; }
+
+:root[data-theme='light'] {
+  transition:
+    --bg 1.6s ease,
+    --bg-2 1.6s ease,
+    --surface 1.6s ease,
+    --text 1.6s ease,
+    --muted 1.6s ease,
+    --faint 1.6s ease,
+    --accent 1.6s ease,
+    --iam 1.6s ease,
+    --cta-bg 1.6s ease,
+    --cord 1.6s ease,
+    --header-bg 1.6s ease,
+    --cursor-a 1.6s ease,
+    --cursor-b 1.6s ease;
+}
+
+/* No cross-fade while the pull-cord switches light/dark (the circular reveal handles that). */
+:root.theme-switching {
+  transition: none !important;
+}
+
 /* ---------- Theme tokens ---------- */
+/* Light — "indigo" palette (default) */
 :root,
 :root[data-theme='light'] {
-  --bg: #efebe4;
-  --bg-2: #e7e2d9;
-  --surface: #f8f6f2;
+  --bg: #f3f4f8;
+  --bg-2: #eceef4;
+  --surface: #fafbfd;
   --surface-2: #ffffff;
-  --text: #161616;
-  --muted: #6b6862;
-  --faint: #a29e96;
-  --line: rgba(20, 20, 20, 0.1);
-  --line-strong: rgba(20, 20, 20, 0.22);
-  --accent: #c4622d;
-  --accent-soft: rgba(196, 98, 45, 0.12);
+  --text: #16181d;
+  --muted: #5f6472;
+  --faint: #a3a8b5;
+  --line: rgba(22, 24, 29, 0.09);
+  --line-strong: rgba(22, 24, 29, 0.2);
+  --accent: #4f46e5;
+  --accent-soft: rgba(79, 70, 229, 0.12);
+  --iam: #4f46e5;
+  --cta-bg: #2353d6;
+  --cta-text: #ffffff;
   --sage: #6f8f78;
   --live: #5fae4a;
-  --cord: #2b2b2b;
-  --glow: rgba(196, 98, 45, 0);
-  --glow-2: rgba(80, 110, 140, 0);
-  --btn-bg: #161616;
-  --btn-text: #f8f6f2;
-  --shadow: 0 20px 50px -24px rgba(40, 30, 20, 0.35);
-  --header-bg: rgba(239, 235, 228, 0.78);
+  --cord: #2b2d33;
+  --glow: rgba(79, 70, 229, 0);
+  --glow-2: rgba(56, 189, 248, 0);
+  --cursor-a: rgba(99, 102, 241, 0.28);
+  --cursor-b: rgba(56, 189, 248, 0.22);
+  --btn-bg: #16181d;
+  --btn-text: #fafbfd;
+  --shadow: 0 20px 50px -24px rgba(30, 35, 60, 0.35);
+  --header-bg: rgba(243, 244, 248, 0.75);
   color-scheme: light;
+}
+
+/* Light — "warm" palette */
+:root[data-theme='light'][data-palette='warm'] {
+  --bg: #f8f1ee;
+  --bg-2: #f3e8e3;
+  --surface: #fcf8f6;
+  --text: #1c1715;
+  --muted: #6e625d;
+  --faint: #b0a39d;
+  --line: rgba(28, 23, 21, 0.09);
+  --line-strong: rgba(28, 23, 21, 0.2);
+  --accent: #d7322e;
+  --accent-soft: rgba(215, 50, 46, 0.12);
+  --iam: #d9a23a;
+  --cta-bg: #d7322e;
+  --cord: #2b2523;
+  --cursor-a: rgba(251, 146, 60, 0.28);
+  --cursor-b: rgba(244, 114, 182, 0.24);
+  --btn-bg: #1c1715;
+  --btn-text: #fcf8f6;
+  --shadow: 0 20px 50px -24px rgba(60, 30, 20, 0.35);
+  --header-bg: rgba(248, 241, 238, 0.75);
+}
+
+/* Light — "rose" palette */
+:root[data-theme='light'][data-palette='rose'] {
+  --bg: #fbf0f3;
+  --bg-2: #f6e4ea;
+  --surface: #fdf8fa;
+  --text: #1d1418;
+  --muted: #6f5e66;
+  --faint: #b3a1a9;
+  --accent: #db2777;
+  --iam: #db2777;
+  --cta-bg: #be185d;
+  --cord: #2d2328;
+  --cursor-a: rgba(244, 114, 182, 0.3);
+  --cursor-b: rgba(251, 191, 36, 0.2);
+  --header-bg: rgba(251, 240, 243, 0.75);
+}
+
+/* Light — "emerald" palette */
+:root[data-theme='light'][data-palette='emerald'] {
+  --bg: #eff6f3;
+  --bg-2: #e3efea;
+  --surface: #f8fbfa;
+  --text: #13201b;
+  --muted: #5a6b64;
+  --faint: #9fb1a9;
+  --accent: #059669;
+  --iam: #0d9488;
+  --cta-bg: #047857;
+  --cord: #22302b;
+  --cursor-a: rgba(16, 185, 129, 0.26);
+  --cursor-b: rgba(56, 189, 248, 0.2);
+  --header-bg: rgba(239, 246, 243, 0.75);
 }
 
 :root[data-theme='dark'] {
@@ -36,6 +137,11 @@
   --line-strong: rgba(255, 255, 255, 0.2);
   --accent: #e07a3f;
   --accent-soft: rgba(224, 122, 63, 0.14);
+  --iam: #5f5c57;
+  --cta-bg: #f1eee8;
+  --cta-text: #111;
+  --cursor-a: rgba(224, 122, 63, 0.16);
+  --cursor-b: rgba(70, 110, 150, 0.16);
   --sage: #8fb398;
   --live: #8fd16b;
   --cord: #e9e1d0;
@@ -177,9 +283,10 @@ section[id] {
     color 0.3s ease;
 
   &.primary {
-    background: var(--btn-bg);
-    color: var(--btn-text);
+    background: var(--cta-bg);
+    color: var(--cta-text);
     padding: 8px 8px 8px 24px;
+    box-shadow: 0 10px 24px -12px var(--cta-bg);
 
     .arrow {
       width: 36px;
@@ -187,8 +294,8 @@ section[id] {
       display: grid;
       place-items: center;
       border-radius: 50%;
-      background: var(--btn-text);
-      color: var(--btn-bg);
+      background: var(--cta-text);
+      color: var(--cta-bg);
       transition: transform 0.3s ease;
     }
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Contact } from './components/contact/contact';
+import { CursorGlow } from './components/cursor-glow/cursor-glow';
 import { Doors } from './components/doors/doors';
 import { Hero } from './components/hero/hero';
 import { Navbar } from './components/navbar/navbar';
@@ -10,8 +11,9 @@ import { Story } from './components/story/story';
 
 @Component({
   selector: 'app-root',
-  imports: [PullThread, Navbar, Hero, Doors, Project, Story, Skills, Contact],
+  imports: [CursorGlow, PullThread, Navbar, Hero, Doors, Project, Story, Skills, Contact],
   template: `
+    <app-cursor-glow />
     <app-pull-thread />
     <app-navbar />
     <main>

@@ -38,7 +38,8 @@ h1 {
   }
 
   .iam {
-    color: var(--faint);
+    color: var(--iam);
+    transition: color 0.4s ease;
   }
 }
 
