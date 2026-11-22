@@ -73,31 +73,6 @@
   }
 }
 
-.clock {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  font-size: 12px;
-  color: var(--muted);
-  white-space: nowrap;
-
-  strong {
-    color: var(--text);
-    font-weight: 700;
-  }
-
-  .dot {
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: var(--faint);
-  }
-}
-
 .burger {
   display: none;
   width: 40px;
@@ -119,12 +94,6 @@
   }
 }
 
-@media (max-width: 1080px) {
-  .clock .lbl {
-    display: none;
-  }
-}
-
 @media (max-width: 900px) {
   .inner {
     padding: 0 16px;
@@ -133,10 +102,6 @@
 
   .brand {
     display: block;
-  }
-
-  .clock {
-    display: none;
   }
 
   .burger {

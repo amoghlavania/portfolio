@@ -168,6 +168,14 @@ export const SKILL_GROUPS = [
 ];
 
 export const CERTIFICATIONS = [
-  { name: 'AWS Certified Cloud Practitioner', validity: '2025 — 2028' },
-  { name: 'AWS Certified AI Practitioner', validity: '2026 — 2029' },
+  {
+    name: 'AWS Certified Cloud Practitioner',
+    validity: '2025 — 2028',
+    url: 'https://drive.google.com/file/d/1b-6_BHK-Bhv7RUx1DMjhuGvWyKbJEL1W/view?usp=sharing',
+  },
+  {
+    name: 'AWS Certified AI Practitioner',
+    validity: '2026 — 2029',
+    url: 'https://drive.google.com/file/d/1V8QjGH_yCKborv5P4Mnvg35oRBrS01LM/view?usp=sharing',
+  },
 ];

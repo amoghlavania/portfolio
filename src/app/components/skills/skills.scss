@@ -88,16 +88,9 @@
   gap: 16px;
 }
 
-.cert.resume {
+a.cert {
   position: relative;
-  background: var(--cta-bg);
-  color: var(--cta-text);
   transition: transform 0.3s ease;
-
-  .badge {
-    background: var(--cta-text);
-    color: var(--cta-bg);
-  }
 
   .go {
     position: absolute;
@@ -113,6 +106,16 @@
     .go {
       transform: translate(3px, -3px);
     }
+  }
+}
+
+.cert.resume {
+  background: var(--cta-bg);
+  color: var(--cta-text);
+
+  .badge {
+    background: var(--cta-text);
+    color: var(--cta-bg);
   }
 }
 
