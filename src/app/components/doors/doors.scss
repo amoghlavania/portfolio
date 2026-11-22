@@ -162,15 +162,6 @@
   }
 }
 
-.caption {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--muted);
-  transition: color 0.3s ease;
-}
-
 .open {
   .door {
     transform: rotateY(-105deg);
@@ -178,10 +169,6 @@
 
   .room {
     opacity: 1;
-  }
-
-  .caption {
-    color: var(--text);
   }
 }
 

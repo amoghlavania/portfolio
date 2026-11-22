@@ -29,10 +29,9 @@ export const NAV_LINKS = [
 ];
 
 export const HERO_ROLES = [
+  'Software Engineer',
   'Java Developer',
   'Backend Engineer',
-  'Spring Boot Dev',
-  'API Builder',
   'AWS Certified',
 ];
 
