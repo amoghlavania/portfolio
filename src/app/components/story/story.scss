@@ -20,7 +20,7 @@
 
 .sticky {
   position: sticky;
-  top: 18vh;
+  top: calc(68px + clamp(32px, 4vw, 56px)); // just below the navbar, matching section padding
   align-self: start;
 
   .section-title {
@@ -100,13 +100,13 @@
   position: relative;
   list-style: none;
   margin: 0;
-  padding: 10vh 0 10vh 40px;
+  padding: 0 0 20vh 40px;
   border-left: 1.5px solid var(--line-strong);
 }
 
 .entry {
   position: relative;
-  padding: 36px 0;
+  padding: 0 0 72px;
   min-height: 44vh;
   opacity: 0.32;
   transition: opacity 0.5s ease;
@@ -123,7 +123,7 @@
 .node {
   position: absolute;
   left: -48px;
-  top: 40px;
+  top: 2px;
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -220,11 +220,11 @@ h3 {
 
   .entry {
     min-height: auto;
-    padding: 28px 0;
+    padding: 0 0 48px;
   }
 
   .timeline {
-    padding: 4vh 0 4vh 32px;
+    padding: 8px 0 10vh 32px;
   }
 
   .node {
