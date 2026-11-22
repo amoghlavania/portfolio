@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "PowerShell($env:Path = \"C:\\\\Program Files\\\\nodejs;$env:Path\"; node \"C:\\\\Users\\\\AMOGHL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\dc7067def900b3e7\\\\a6a100a6-121c-4181-bf59-614255428682\\\\scratchpad\\\\shots\\\\serve.js\" \"D:\\\\#projects\\\\portfolio\\\\dist\\\\portfolio\\\\browser\")",
-      "PowerShell($env:Path = \"C:\\\\Program Files\\\\nodejs;$env:Path\"; Start-Sleep 1; node \"C:\\\\Users\\\\AMOGHL~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\dc7067def900b3e7\\\\a6a100a6-121c-4181-bf59-614255428682\\\\scratchpad\\\\shots\\\\mobile-bug.js\")",
-      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\('Path','Machine'\\) + ';' + [Environment]::GetEnvironmentVariable\\('Path','User'\\); Set-Location \"D:\\\\#projects\\\\portfolio\"; npx ng build 2>&1 | Select-String 'complete|ERROR|WARN'; if \\($?\\) { git add -A; git commit -q -m \"Gmail send button, resume card, footer heart, fix mobile card flip during theme switch\"; git push 2>&1 | Select-String '->'; git log --oneline -1 })"
-    ]
-  }
-}
