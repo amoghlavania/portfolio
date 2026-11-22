@@ -107,20 +107,6 @@ export interface StoryItem {
 
 export const STORY: StoryItem[] = [
   {
-    year: '2026',
-    range: '2026 — 2029',
-    title: 'AWS Certified AI Practitioner',
-    org: 'Amazon Web Services',
-    points: ['Certified in AI, machine learning and generative-AI fundamentals on AWS.'],
-  },
-  {
-    year: '2025',
-    range: '2025 — 2028',
-    title: 'AWS Certified Cloud Practitioner',
-    org: 'Amazon Web Services',
-    points: ['Certified in core AWS cloud concepts, services, security and pricing.'],
-  },
-  {
     year: '2024',
     range: 'Oct 2024 — Now',
     title: 'Software Engineer',
