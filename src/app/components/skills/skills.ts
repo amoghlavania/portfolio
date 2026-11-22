@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CERTIFICATIONS, SKILL_GROUPS } from '../../data/portfolio.data';
+import { CERTIFICATIONS, PROFILE, SKILL_GROUPS } from '../../data/portfolio.data';
 import { RevealDirective } from '../../shared/reveal.directive';
 
 @Component({
@@ -11,5 +11,6 @@ import { RevealDirective } from '../../shared/reveal.directive';
 export class Skills {
   protected readonly groups = SKILL_GROUPS;
   protected readonly certs = CERTIFICATIONS;
+  protected readonly resumeUrl = PROFILE.resume;
   protected readonly marquee = SKILL_GROUPS.flatMap((g) => g.items);
 }

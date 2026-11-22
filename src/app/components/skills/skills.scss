@@ -84,8 +84,36 @@
 .certs {
   margin-top: 16px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+}
+
+.cert.resume {
+  position: relative;
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  transition: transform 0.3s ease;
+
+  .badge {
+    background: var(--cta-text);
+    color: var(--cta-bg);
+  }
+
+  .go {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+
+    .go {
+      transform: translate(3px, -3px);
+    }
+  }
 }
 
 .cert {
@@ -124,6 +152,14 @@
 @media (max-width: 1000px) {
   .groups {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .certs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cert.resume {
+    grid-column: 1 / -1;
   }
 }
 

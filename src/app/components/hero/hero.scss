@@ -179,9 +179,19 @@ h1 {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   box-shadow: var(--shadow);
+  // Hide the face that isn't showing outright, switching at the flip's midpoint.
+  // backface-visibility alone is unreliable on mobile (e.g. during the theme
+  // view-transition snapshot), which made the back face show through mirrored.
+  transition: visibility 0s linear 0.4s;
+}
+
+.card:not(.flipped) .back,
+.card.flipped .front {
+  visibility: hidden;
 }
 
 .front {
+  transform: rotateY(0deg);
   background: #fff;
   border: 1px solid var(--line);
 

@@ -6,9 +6,10 @@
 
     <div class="mail" appReveal="140">
       <a [href]="'mailto:' + p.email">{{ p.email }}</a>
-      <button type="button" class="copy" (click)="copyEmail()" [attr.aria-label]="'Copy email address'">
-        {{ copied() ? 'Copied ✓' : 'Copy' }}
-      </button>
+      <a class="send" [href]="gmailUrl" target="_blank" rel="noopener" aria-label="Send me an email in Gmail">
+        Send
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13" /><path d="M22 2 15 22l-4-9-9-4 20-7z" /></svg>
+      </a>
     </div>
 
     <div class="cards">
@@ -31,7 +32,7 @@
 
   <footer class="container foot mono">
     <span>© {{ year }} {{ p.fullName }}</span>
-    <span class="hide-sm">Built with Angular</span>
+    <span>Built with Angular and <span class="heart" aria-label="love">❤</span></span>
     <span>Pull the thread to switch the lights</span>
   </footer>
 </section>

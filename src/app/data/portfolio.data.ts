@@ -12,6 +12,7 @@ export const PROFILE = {
   linkedin: 'https://www.linkedin.com/in/amoghlavania',
   linkedinLabel: 'linkedin.com/in/amoghlavania',
   github: 'https://github.com/amoghlavania',
+  resume: 'https://drive.google.com/file/d/1wG5fX5h84XcC9oTrgeGhPGzCRTGAGPty/view?usp=drive_link',
   summary:
     'Java Backend Developer at Coforge with 2+ years of experience in Core Java, Spring Boot, Microservices and REST APIs. ' +
     'I helped migrate an airline reservation system from mainframe to Java, improving scalability and ensuring IATA compliance.',
